@@ -1,0 +1,1 @@
+IN /resources/library/doctrine : ln -s ../../../vendor/bin/doctrine doctrine
