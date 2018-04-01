@@ -1,3 +1,4 @@
+/*
 var socket = io.connect('http://localhost:8083');
 
 socket.on('broadcast', function (message) {
@@ -18,3 +19,4 @@ socket.on('message', function(obj) {
 	}
 		
 });
+*/
