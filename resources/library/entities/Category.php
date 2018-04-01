@@ -1,0 +1,150 @@
+<?php
+
+namespace entities;
+
+use Doctrine\ORM\Mapping as ORM;
+/** 
+ * @Entity 
+ * @Table(name="categories",indexes={@Index(name="parent_category", columns={"parent"})})
+*/
+class Category
+{
+    /** 
+     * @Id
+     * @Column(type="integer")
+     * @GeneratedValue
+     */
+    private $id;
+
+    /** @Column(type="text", length=255, name="title", nullable=true) */
+    private $title = null;
+
+    /** @Column(type="text", length=255, name="description", nullable=true) */
+    private $description = null;
+
+    /** @Column(type="text", name="img", nullable=true) */
+    private $img = null;
+
+    /** @Column(type="integer", name="parent", nullable=true) */
+    private $parent = null;
+
+    /**
+     * Set id.
+     *
+     * @param int $id
+     *
+     * @return Category
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set description.
+     *
+     * @param string $description
+     *
+     * @return Category
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set img.
+     *
+     * @param string $img
+     *
+     * @return Category
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img.
+     *
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * Set parent.
+     *
+     * @param int $parent
+     *
+     * @return Category
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Get parent.
+     *
+     * @return int
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Set title.
+     *
+     * @param string|null $title
+     *
+     * @return Category
+     */
+    public function setTitle($title = null)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title.
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+}

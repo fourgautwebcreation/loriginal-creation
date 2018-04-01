@@ -1,0 +1,82 @@
+*{
+	font-family: 'Petit Formal Script', cursive;
+}
+
+html{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+
+body{
+	background-color:black !important;
+	min-width:100%;
+	min-height:100%;
+	padding:0;
+	margin:0;
+	overflow:auto;
+}
+
+nav{
+	display:block;
+	width:100%;
+	text-align:center;
+	min-height:100px;
+}
+
+nav ul{
+	display:block;
+	width:100%;
+	text-align:center;
+	position:relative;
+}
+
+nav ul li{
+	display:inline-block;
+	list-style:none;
+	cursor:pointer;
+	margin:5px;
+}
+nav ul li.title{
+	position:absolute;
+	left:0;
+	color:goldenrod;
+	font-size:1.5em;
+}
+nav ul li:hover{
+	color:goldenrod;
+}
+
+.active{
+	color:goldenrod;
+}
+
+.content-img{
+	border-radius:5px;
+	cursor:pointer;
+	background-size:100% auto;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:250px;
+	height:150px;
+	margin:auto;
+	overflow:hidden;
+	 webkit-transition: background-size 250ms linear;
+    -moz-transition: background-size 250ms linear;
+    -o-transition: background-size 250ms linear;
+    -ms-transition: background-size 250ms linear;
+    transition: background-size 250ms linear;
+}
+
+.visible{
+	opacity:1 !important;
+}
+
+.item-active h1{
+	color:goldenrod !important;
+}
+
+.item-active .content-img{
+	background-size:120% auto !important; 
+}

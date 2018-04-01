@@ -2,5 +2,5 @@
 
 use entitiesManagers as globalManager;
 
-$constructor = new globalManager\Manager('MAIN_MANAGER');
+$constructor = new globalManager\Manager();
 $entityManager = $constructor->get();

@@ -6,6 +6,7 @@ class Animations implements \interfaces\controllersInterface{
 
 	private $type;
 	private $datas;
+	private $redirect;
 	private $template = 'animations.twig';
 
 	public function __construct(){
@@ -23,6 +24,10 @@ class Animations implements \interfaces\controllersInterface{
 
 	public function getType():string{
 		return $this->type;
+	}
+
+	public function getRedirect():string{
+		return $this->redirect;
 	}
 
 }

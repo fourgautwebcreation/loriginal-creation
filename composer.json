@@ -3,14 +3,19 @@
     "require": {
         "doctrine/orm": "^2.6",
         "twig/twig": "^2.0",
-        "symfony/http-foundation": "^4.0"
+        "symfony/http-foundation": "^4.0",
+        "twbs/bootstrap": "^3.3.7",
+        "wisembly/elephant.io": "^3.3"
     },
     "autoload":{
         "psr-4": {
             "entitiesManagers\\": "resources/library/entitiesManagers",
             "rooter\\": "resources/library/rooter",
             "controllers\\": "resources/library/controllers",
-            "interfaces\\": "resources/library/interfaces"
+            "interfaces\\": "resources/library/interfaces",
+            "entities\\": "resources/library/entities",
+            "repositories\\": "resources/library/repositories",
+            "helpers\\": "resources/library/helpers"
         }
     },
     "authors": [

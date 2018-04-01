@@ -1,0 +1,27 @@
+<?php
+
+use Doctrine\ORM\Mapping as ORM;
+
+/** 
+ * @Entity(repositoryClass="repositories\UserRepository") 
+ * @Table(name="users")
+ * 
+*/
+class User
+{
+    /** 
+     * @Id
+     * @Column(type="integer")
+     * @GeneratedValue
+     */
+    private $id;
+
+    /** @Column(type="text", length=255, name="pseudo") */
+    private $pseudo;
+
+    /** @Column(type="text",length=255, name="pass") */
+    private $pass;
+
+    /** @Column(type="text",length=255, name="mail", nullable=true) */
+    private $mail = null;
+}
