@@ -26,51 +26,30 @@ class Rooter{
 			$route = ( $postRequest->get('part') !== null ? $postRequest->get('part') : ( $getRequest->get('part') !== null  ? $getRequest->get('part') : 'home' ) );
 		}
 
-		if( $route == 'home' ){
-			$controller = new \controllers\Home();
+		$route = ucfirst($route);
+		$namespace = '\\controllers\\'.$route;
+
+		if( class_exists( $namespace ) ){
+			$controller = new $namespace( $this->request, $this->entityManager );
+
+			if( $controller->getType() == 'html' ){
+				echo $twig->render($controller->getTemplate(), $controller->getDatas());
+			}
+
+			elseif( $controller->getType() == 'json' ){
+				header('Content-Type:Application/json');
+				echo json_encode($controller->getDatas());
+			}
+
+			elseif( $controller->getType() == 'redirect' ){
+				header('location:'.$controller->getRedirect());
+			}
 		}
 
-		if( $route == 'immo' ){
-			$controller = new \controllers\Immo();
-		}
-		
-		if( $route == 'animations' ){
-			$controller = new \controllers\Animations();
-		}
-
-		if( $route == 'contact' ){
-			$controller = new \controllers\Contact();
-		}
-
-		if( $route == 'api' ){
-			$controller = new \controllers\Api( $this->request, $this->entityManager );
-		}
-
-		if( $route == 'admin' ){
-			$controller = new \controllers\Admin( $this->request, $this->entityManager );
-		}
-
-
-		if( $route == 'dashboard' ){
-			$controller = new \controllers\Dashboard( $this->request, $this->entityManager );
-		}
-
-		if( $controller == null ){
+		else{
 			echo $route.' not found';
 		}
-
-		if( $controller->getType() == 'html' ){
-			echo $twig->render($controller->getTemplate(), $controller->getDatas());
-		}
-
-		elseif( $controller->getType() == 'json' ){
-			header('Content-Type:Application/json');
-			echo json_encode($controller->getDatas());
-		}
-
-		elseif( $controller->getType() == 'redirect' ){
-			header('location:'.$controller->getRedirect());
-		}
+		
 	}
 
 }

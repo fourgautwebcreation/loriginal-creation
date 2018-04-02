@@ -1,5 +1,12 @@
+@font-face {
+    font-family: blackSword;
+    src: url(Blacksword.otf);
+    font-stretch: expanded;
+}
+
 *{
-	font-family: 'Petit Formal Script', cursive;
+	font-family: /*'Petit Formal Script', cursive*/ blackSword;
+	letter-spacing:3px;
 }
 
 html{

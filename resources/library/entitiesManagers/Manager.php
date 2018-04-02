@@ -8,11 +8,11 @@ class Manager{
 	private $databasesConf = __DIR__.'/databases.json';
 	private $configurations;
 
-	public function __construct( $conf = null ){
+	public function __construct(){
 
 		$paths = array(realpath(__DIR__.'/../entities/'), realpath(__DIR__.'/../repositories/'));
-		$isDevMode = true;
-		$conf = ( $isDevMode == true OR $conf == null ) ? 'dev' : $conf;
+		$isDevMode = false;
+		$conf = ( $isDevMode == true ) ? 'dev' : 'prod';
 
 		try{
 			$manager = self::getManager($conf);
